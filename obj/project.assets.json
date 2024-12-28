@@ -2575,9 +2575,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\PERT 2.csproj",
-      "projectName": "PERT 2",
-      "projectPath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\PERT 2.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\TrainingProjectApi_AspDorNetCore_cek.csproj",
+      "projectName": "TrainingProjectApi_AspDorNetCore_cek",
+      "projectPath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\TrainingProjectApi_AspDorNetCore_cek.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\obj\\",
       "projectStyle": "PackageReference",
