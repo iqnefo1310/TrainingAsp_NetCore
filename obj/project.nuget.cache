@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b535jCMhWnFTvqsYLN0B6/Yp02UEN/CRuzHgWMHUDwo5A+8tghWYjfp8DGAJ1vXtZG1yMY8Zk7YuITIORMl6EA==",
+  "dgSpecHash": "TPx3xQMcYSANvCq9vXBJ9E0gDQtJln6Epq22dmnLXrJTvF6Nuo/Eo32roeB3qLt1Boa11MqhZcBVSQzsjnh9wA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\PERT 2.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\TrainingProjectApi_AspDotNetCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
