@@ -70,26 +70,6 @@ namespace PERT_2.Controllers
 
             return Ok(customerList);
         }
-        /*public IActionResult delete(Customer customer)
-        {
-            
-        }*/
-
-        //end dibuat
-
-        /*//default Vs Code
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-
-        // PUT api/<CustomerController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }*/
 
         // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
