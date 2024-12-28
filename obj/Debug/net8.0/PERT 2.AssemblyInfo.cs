@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PERT 2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2818782e6c6a3e6141a60cdb887c096a9be95285")]
 [assembly: System.Reflection.AssemblyProductAttribute("PERT 2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PERT 2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
