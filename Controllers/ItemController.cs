@@ -40,27 +40,24 @@ namespace PERT_2.Controllers
             [FromQuery] string supplier,
             [FromQuery] string? alamatSupplier)
         {
-            // Validasi untuk namaItem
             if (string.IsNullOrEmpty(namaItem))
                 return BadRequest("Nama item wajib diisi.");
 
-            // Validasi untuk qty
             if (!qty.HasValue || qty <= 0)
                 return BadRequest("Qty harus angka positif dan wajib diisi.");
 
-            // Validasi untuk tglExpire
             if (!tglExpire.HasValue || tglExpire <= DateTime.Now)
                 return BadRequest("Tanggal expire harus tanggal valid dan lebih dari hari ini.");
 
             alamatSupplier = string.IsNullOrEmpty(alamatSupplier) ? "none" : alamatSupplier;
-            // Alamat supplier opsional
+            
             var newItem = new Item
             {
                 NamaItem = namaItem,
                 Qty = qty.Value,
-                TglExpire = tglExpire.Value, // Dipastikan tidak null
+                TglExpire = tglExpire.Value,
                 Supplier = supplier,
-                AlamatSupplier = alamatSupplier // Nullable, bisa null
+                AlamatSupplier = alamatSupplier
             };
 
             var isAdded = _itemsSevices.CreateItems(newItem);
@@ -80,14 +77,12 @@ namespace PERT_2.Controllers
             [FromQuery] string? supplier,
             [FromQuery] string? alamatSupplier)
         {
-            // Periksa apakah item dengan ID yang diberikan ada
             var existingItem = _itemsSevices.GetItemById(id);
             if (existingItem == null)
                 return NotFound(new { status = "error", message = $"Item with ID {id} not found." });
 
             try
             {
-                // Update hanya jika nilai baru diberikan
                 if (!string.IsNullOrEmpty(namaItem))
                 {
                     existingItem.NamaItem = namaItem;
@@ -108,10 +103,8 @@ namespace PERT_2.Controllers
                     existingItem.Supplier = supplier;
                 }
 
-                // Set "none" jika alamatSupplier kosong
                 existingItem.AlamatSupplier = string.IsNullOrEmpty(alamatSupplier) ? "none" : alamatSupplier;
 
-                // Simpan perubahan melalui service
                 var isUpdated = _itemsSevices.UpdateItem(id, existingItem);
                 if (isUpdated)
                 {
