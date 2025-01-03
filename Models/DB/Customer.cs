@@ -1,4 +1,6 @@
-﻿namespace PERT_2.Models.DB
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PERT_2.Models.DB
 {
     public class Customer
     {
@@ -8,4 +10,5 @@
         public string City { get; set; }
         public string phoneNumber { get; set; }
     }
+
 }

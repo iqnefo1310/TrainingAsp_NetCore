@@ -74,6 +74,109 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PERT_2.Controllers.ItemController",
+    "Method": "UpdateItem",
+    "RelativePath": "api/Item/Masukan {id} Untuk Mengedit Data",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "namaItem",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "qty",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "tglExpire",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "supplier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "alamatSupplier",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PERT_2.Controllers.ItemController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/Item/Masukan {id} Untuk Menghapus Data",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PERT_2.Controllers.ItemController",
+    "Method": "AddItem",
+    "RelativePath": "api/Item/Menambahkan Data",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "namaItem",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "qty",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "tglExpire",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "supplier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "alamatSupplier",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PERT_2.Controllers.ItemController",
+    "Method": "Get",
+    "RelativePath": "api/Item/Mendapatkan Semua Data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PERT_2.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
@@ -83,7 +186,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[PERT_2.WeatherForecast, PERT 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PERT_2.WeatherForecast, TrainingProjectApi_AspDotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainingProjectApi_AspDorNetCore_cek")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+795c56b5d07c06a3504175c6812536874ced3872")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+775ca88a6f82418164436ff609f3fca0d7e1f5a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainingProjectApi_AspDorNetCore_cek")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainingProjectApi_AspDorNetCore_cek")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

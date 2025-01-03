@@ -1,0 +1,6 @@
+@PERT_2_HostAddress = http://localhost:5169
+
+GET {{PERT_2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
