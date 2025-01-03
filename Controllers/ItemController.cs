@@ -17,7 +17,7 @@ namespace PERT_2.Controllers
         }
 
         // GET: api/item
-        [HttpGet ("Mendapatkan Semua Data")]
+        [HttpGet("Mendapatkan Semua Data")]
         public IActionResult Get()
         {
             try
@@ -28,7 +28,8 @@ namespace PERT_2.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, new { status = "error", message = ex.Message });
-            }        }
+            }
+        }
 
         // POST: api/item
         [HttpPost("Menambahkan Data")]
@@ -37,7 +38,7 @@ namespace PERT_2.Controllers
             [FromQuery] int? qty,
             [FromQuery] DateTime? tglExpire,
             [FromQuery] string supplier,
-            [FromQuery] string? alamatSupplier) // Nullable string
+            [FromQuery] string? alamatSupplier)
         {
             // Validasi untuk namaItem
             if (string.IsNullOrEmpty(namaItem))
@@ -51,6 +52,7 @@ namespace PERT_2.Controllers
             if (!tglExpire.HasValue || tglExpire <= DateTime.Now)
                 return BadRequest("Tanggal expire harus tanggal valid dan lebih dari hari ini.");
 
+            alamatSupplier = string.IsNullOrEmpty(alamatSupplier) ? "none" : alamatSupplier;
             // Alamat supplier opsional
             var newItem = new Item
             {
@@ -70,33 +72,46 @@ namespace PERT_2.Controllers
         }
         // PUT: api/item/{id}
         [HttpPut("Masukan {id} Untuk Mengedit Data")]
-        public IActionResult UpdateItem(int id, [FromQuery] string namaItem, [FromQuery] int? qty, [FromQuery] DateTime? tglExpire, [FromQuery] string supplier, [FromQuery] string alamatSupplier)
+        public IActionResult UpdateItem(
+            int id,
+            [FromQuery] string? namaItem,
+            [FromQuery] int? qty,
+            [FromQuery] DateTime? tglExpire,
+            [FromQuery] string? supplier,
+            [FromQuery] string? alamatSupplier)
         {
+            // Periksa apakah item dengan ID yang diberikan ada
             var existingItem = _itemsSevices.GetItemById(id);
             if (existingItem == null)
                 return NotFound(new { status = "error", message = $"Item with ID {id} not found." });
 
-            // Validasi namaItem
-            if (string.IsNullOrEmpty(namaItem))
-                return BadRequest(new { status = "error", message = "Nama item wajib diisi." });
-
-            // Validasi qty
-            if (!qty.HasValue || qty <= 0)
-                return BadRequest(new { status = "error", message = "Qty harus angka positif dan wajib diisi." });
-
-            // Validasi tglExpire
-            if (!tglExpire.HasValue || tglExpire <= DateTime.Now)
-                return BadRequest(new { status = "error", message = "Tanggal expire harus tanggal valid dan lebih dari hari ini." });
-
             try
             {
-                // Update item
-                existingItem.NamaItem = namaItem;
-                existingItem.Qty = qty.Value;
-                existingItem.TglExpire = tglExpire.Value;
-                existingItem.Supplier = supplier;
-                existingItem.AlamatSupplier = alamatSupplier;
+                // Update hanya jika nilai baru diberikan
+                if (!string.IsNullOrEmpty(namaItem))
+                {
+                    existingItem.NamaItem = namaItem;
+                }
 
+                if (qty.HasValue && qty > 0)
+                {
+                    existingItem.Qty = qty.Value;
+                }
+
+                if (tglExpire.HasValue && tglExpire > DateTime.Now)
+                {
+                    existingItem.TglExpire = tglExpire.Value;
+                }
+
+                if (!string.IsNullOrEmpty(supplier))
+                {
+                    existingItem.Supplier = supplier;
+                }
+
+                // Set "none" jika alamatSupplier kosong
+                existingItem.AlamatSupplier = string.IsNullOrEmpty(alamatSupplier) ? "none" : alamatSupplier;
+
+                // Simpan perubahan melalui service
                 var isUpdated = _itemsSevices.UpdateItem(id, existingItem);
                 if (isUpdated)
                 {
@@ -109,6 +124,7 @@ namespace PERT_2.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { status = "error", message = ex.Message });
             }
         }
+
         // DELETE: api/item/{id}
         [HttpDelete("Masukan {id} Untuk Menghapus Data")]
         public IActionResult DeleteItem(int id)
