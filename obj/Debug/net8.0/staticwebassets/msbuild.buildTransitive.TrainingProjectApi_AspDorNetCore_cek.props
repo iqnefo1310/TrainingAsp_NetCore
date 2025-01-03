@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TrainingProjectApi_AspDorNetCore_cek.props" />
+</Project>
