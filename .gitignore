@@ -8,3 +8,10 @@
 /.vs/ProjectEvaluation/pert 2.projects.v7.bin
 *.bin
 *.config
+*.vsidx
+*.v2
+/.vs/TrainingProjectApi_AspDorNetCore_cek/v17/.suo
+/.vs/TrainingProjectApi_AspDorNetCore_cek/v17/DocumentLayout.json
+/TrainingProjectApi_AspDorNetCore_cek.csproj
+/TrainingProjectApi_AspDorNetCore_cek.csproj.user
+/TrainingProjectApi_AspDorNetCore_cek.http
