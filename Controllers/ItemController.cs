@@ -31,6 +31,15 @@ namespace PERT_2.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            //return new string[] { "value1", "value2" };
+            var customerList = _itemsSevices.GetItemById(id);
+
+            return Ok(customerList);
+        }
+
         // POST: api/item
         [HttpPost("Menambahkan Data")]
         public IActionResult AddItem(
@@ -38,7 +47,8 @@ namespace PERT_2.Controllers
             [FromQuery] int? qty,
             [FromQuery] DateTime? tglExpire,
             [FromQuery] string supplier,
-            [FromQuery] string? alamatSupplier)
+            [FromQuery] string? alamatSupplier
+            )
         {
             if (string.IsNullOrEmpty(namaItem))
                 return BadRequest("Nama item wajib diisi.");
