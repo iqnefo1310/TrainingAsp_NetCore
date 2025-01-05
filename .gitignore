@@ -3,3 +3,23 @@
 ################################################################################
 
 /.vs/PERT 2
+/.vs/ProjectEvaluation
+*.config
+*.v2
+*.vsidx
+/.vs/TrainingProjectApi_AspDorNetCore/v17/.suo
+/.vs/TrainingProjectApi_AspDorNetCore/v17/DocumentLayout.json
+*.suo
+*.json
+*.exe
+*.pdb
+*.dll
+*.props
+/obj/Debug/net8.0/ApiEndpoints.json
+/obj/Debug/net8.0/apphost.exe
+/obj/Debug/net8.0/staticwebassets.build.json
+*.BuildWithSkipAnalyzers
+*.txt
+*.cs
+/.vs/TrainingProjectApi_AspDorNetCore/v17/.suo
+/.vs/TrainingProjectApi_AspDorNetCore/v17/DocumentLayout.json
