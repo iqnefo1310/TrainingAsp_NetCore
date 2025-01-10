@@ -84,7 +84,7 @@ namespace PERT_2.Controllers
                 };
                 return BadRequest(responseFailed);
             }
-        }
+        } 
 
         [HttpPut]
 
