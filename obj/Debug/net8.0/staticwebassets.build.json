@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "rUTK6rl7fydCXkBVsyQ+cl9iCTjNOkbdErUW+VRcCg8=",
-  "Source": "PERT 2",
-  "BasePath": "_content/PERT 2",
+  "Hash": "tRpNvNFdZMSausfus+81f1z40JusJg/vMolHFRy5VpE=",
+  "Source": "TrainingProjectApi_AspDotNetCore",
+  "BasePath": "_content/TrainingProjectApi_AspDotNetCore",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PERT_2.Models;
 using PERT_2.Models.DB;
 using PERT_2.Services;
 
@@ -22,9 +23,28 @@ namespace PERT_2.Controllers
         public IActionResult Get()
         {
             //return new string[] { "value1", "value2" };
-            var customerList = _customerServices.GetListCustommer();
+            try
+            {
+                var customerList = _customerServices.GetListCustommer();
+                var response = new GeneralResponse
+                {
+                    StatusCode = "01",
+                    StatusDesc = "suksess",
+                    Data = customerList
+                };
 
-            return Ok(customerList);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                var response = new GeneralResponse
+                {
+                    StatusCode = "99",
+                    StatusDesc = "Failed | " + ex.Message.ToString(),
+                    Data = null
+                };
+                return BadRequest(response);
+            }
         }
 
         //Pertemuan 3////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,13 +53,38 @@ namespace PERT_2.Controllers
         public IActionResult post(Customer customer)
         {
             var insertCustomer = _customerServices.CreateCustomer(customer);
-            if (insertCustomer)
+            try
             {
 
-                return Ok("Insert Customer Success");
+                if (insertCustomer)
+                {
+                    var responseSuccess = new GeneralResponse
+                    {
+                        StatusCode = "01",
+                        StatusDesc = "Sukses Menambah Data",
+                        Data = insertCustomer
+                    };
+                    return Ok(responseSuccess);
+                }
+                var responseFailed = new GeneralResponse
+                {
+                    StatusCode = "02",
+                    StatusDesc = "Gagal Menambah Data",
+                    Data = null
+                };
+                return BadRequest(responseFailed);
             }
-            return BadRequest("Insert Customer Failed");
-        }
+            catch (Exception ex)
+            {
+                var responseFailed = new GeneralResponse
+                {
+                    StatusCode = "099",
+                    StatusDesc = "Fatal Insert | " + ex.Message.ToString(),
+                    Data = null
+                };
+                return BadRequest(responseFailed);
+            }
+        } 
 
         [HttpPut]
 
