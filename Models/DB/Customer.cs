@@ -7,5 +7,7 @@
         public string Address { get; set; }
         public string City { get; set; }
         public string phoneNumber { get; set; }
+        public DateTime? createdDate { get; set; }
+        public DateTime? updatedDate { get; set; }
     }
 }

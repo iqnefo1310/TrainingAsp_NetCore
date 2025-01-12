@@ -1,8 +1,24 @@
 [
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
+    "Method": "Delete",
+    "RelativePath": "api/Customer/Hapus Data{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PERT_2.Controllers.CustomerController",
     "Method": "Get",
-    "RelativePath": "api/Customer",
+    "RelativePath": "api/Customer/Melihat Semua Data",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,30 +28,14 @@
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
     "Method": "post",
-    "RelativePath": "api/Customer",
+    "RelativePath": "api/Customer/Menambahkan Data Customer",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "PERT_2.Models.DB.Customer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PERT_2.Controllers.CustomerController",
-    "Method": "put",
-    "RelativePath": "api/Customer",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "customer",
-        "Type": "PERT_2.Models.DB.Customer",
+        "Type": "PERT_2.Models.DTO.CustomerRequestDTO",
         "IsRequired": true
       }
     ],
@@ -44,7 +44,7 @@
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
     "Method": "Get",
-    "RelativePath": "api/Customer/{id}",
+    "RelativePath": "api/Customer/Mendapatkan Satu Data{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -59,15 +59,20 @@
   },
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
-    "Method": "Delete",
-    "RelativePath": "api/Customer/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "put",
+    "RelativePath": "api/Customer/Mengedit Data {Id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "Id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customer",
+        "Type": "PERT_2.Models.DTO.CustomerRequestDTO",
         "IsRequired": true
       }
     ],

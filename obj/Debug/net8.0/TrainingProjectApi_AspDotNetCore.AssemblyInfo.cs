@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainingProjectApi_AspDotNetCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc1fa2f1738de7d68b3133e3917d32f4e9ea4a97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+022675d9dceffb52caffae4d85ac1e0ae148bff6")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainingProjectApi_AspDotNetCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainingProjectApi_AspDotNetCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
