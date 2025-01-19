@@ -32,3 +32,5 @@
 >>>>>>> ImplementGeneralResponse
 /.vs/TrainingProjectApi_AspDorNetCore/v17/.suo
 /.vs/TrainingProjectApi_AspDorNetCore/v17/DocumentLayout.json
+/obj/Debug/net8.0/TrainingProjectApi_AspDotNetCore.AssemblyInfoInputs.cache
+/obj/Debug/net8.0/TrainingProjectApi_AspDotNetCore.AssemblyInfo.cs
