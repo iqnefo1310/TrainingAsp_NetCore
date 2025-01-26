@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PERT_2.Models;
 using PERT_2.Models.DB;
+using PERT_2.Models.DTO;
 using PERT_2.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,12 +21,13 @@ namespace PERT_2.Controllers
         }
         // GET: api/<CustomerController>
         [HttpGet]
+        [Route("Melihat Semua Data")]
         public IActionResult Get()
         {
             //return new string[] { "value1", "value2" };
             try
             {
-                var customerList = _customerServices.GetListCustommer();
+                var customerList = _customerServices.GetlistCustomer();
                 var response = new GeneralResponse
                 {
                     StatusCode = "01",
@@ -50,7 +52,8 @@ namespace PERT_2.Controllers
         //Pertemuan 3////////////////////////////////////////////////////////////////////////////////////////////////
         // POST api/<CustomerController>
         [HttpPost]
-        public IActionResult post(Customer customer)
+        [Route("Menambahkan Data Customer")]
+        public IActionResult post(CustomerRequestDTO customer)
         {
             var insertCustomer = _customerServices.CreateCustomer(customer);
             try
@@ -87,12 +90,12 @@ namespace PERT_2.Controllers
         } 
 
         [HttpPut]
-
-        public IActionResult put(Customer customer)
+        [Route("Mengedit Data {Id}")]
+        public IActionResult put(int Id, CustomerRequestDTO customer)
         {
             try
             {
-                var updateCustomer = _customerServices.UpdateCustomer(customer);
+                var updateCustomer = _customerServices.UpdateCustomer(Id ,customer);
                 if (updateCustomer)
                 {
                     return Ok("Update Customer Success");
@@ -107,7 +110,7 @@ namespace PERT_2.Controllers
             }
 
         }
-        [HttpGet("{id}")]
+        [HttpGet("Mendapatkan Satu Data{id}")]
         public IActionResult Get(int id)
         {
             //return new string[] { "value1", "value2" };
@@ -117,7 +120,7 @@ namespace PERT_2.Controllers
         }
 
         // DELETE api/<CustomerController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Hapus Data{id}")]
         public IActionResult Delete(int id)
         {
             try
