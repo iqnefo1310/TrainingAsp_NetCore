@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TPx3xQMcYSANvCq9vXBJ9E0gDQtJln6Epq22dmnLXrJTvF6Nuo/Eo32roeB3qLt1Boa11MqhZcBVSQzsjnh9wA==",
+  "dgSpecHash": "ogG/fBBSOaOdBit1hFLFn+b+orAq+7V8H+Z2yLrvkIOr1+G+KFwE3QNHfHZFo86pbswgJO/Km5o5F36go86RPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Documents\\1.PEMOGRAMAN\\8. C# LANJUTAN\\PERT 2\\TrainingProjectApi_AspDotNetCore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
