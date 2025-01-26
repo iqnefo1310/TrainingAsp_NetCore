@@ -109,3 +109,4 @@ C:\Users\HP\Documents\1.PEMOGRAMAN\8. C# LANJUTAN\PERT 2\obj\Debug\net8.0\refint
 C:\Users\HP\Documents\1.PEMOGRAMAN\8. C# LANJUTAN\PERT 2\obj\Debug\net8.0\TrainingProjectApi_AspDotNetCore.pdb
 C:\Users\HP\Documents\1.PEMOGRAMAN\8. C# LANJUTAN\PERT 2\obj\Debug\net8.0\TrainingProjectApi_AspDotNetCore.genruntimeconfig.cache
 C:\Users\HP\Documents\1.PEMOGRAMAN\8. C# LANJUTAN\PERT 2\obj\Debug\net8.0\ref\TrainingProjectApi_AspDotNetCore.dll
+C:\Users\HP\Documents\1.PEMOGRAMAN\8. C# LANJUTAN\PERT 2\bin\Debug\net8.0\FluentValidation.dll

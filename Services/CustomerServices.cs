@@ -37,21 +37,6 @@ namespace PERT_2.Services
             }
         }
 
-/*        public bool CreateCustomer(Customer customer)
-        {
-            try
-            {
-
-                _context.Customers.Add(customer);
-                _context.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-*/
         public bool UpdateCustomer(int Id, CustomerRequestDTO customer)
         {
             try
@@ -149,5 +134,6 @@ namespace PERT_2.Services
                 return false;
             }
         }
+       
     }
 }
