@@ -11,13 +11,6 @@ namespace PERT_2.Services
         {
             _context = context;
         }
-
-      /*  public List<Customer> GetListCustommer()
-        {
-            var datas = _context.Customers.ToList();
-            return datas;
-        }
-*/
         public Customer GetListCustommerById(int idreq)
         {
             try
@@ -36,22 +29,6 @@ namespace PERT_2.Services
                 throw;
             }
         }
-
-/*        public bool CreateCustomer(Customer customer)
-        {
-            try
-            {
-
-                _context.Customers.Add(customer);
-                _context.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-*/
         public bool UpdateCustomer(int Id, CustomerRequestDTO customer)
         {
             try
@@ -78,7 +55,6 @@ namespace PERT_2.Services
                 throw;
             }
         }
-
         public bool DeleteCustomer(int id)
         {
             try
@@ -99,7 +75,6 @@ namespace PERT_2.Services
                 throw;
             }
         }
-
         //========================================//
         public List<CustomerDTO> GetlistCustomer()
         {
@@ -117,13 +92,11 @@ namespace PERT_2.Services
 
             return data;
         }
-
         // Mendapatkan satu data pelanggan berdasarkan ID
         public Customer GetCustomerById(int id)
         {
             return _context.Customers.FirstOrDefault(x => x.Id == id); // Mengembalikan satu pelanggan dengan ID tertentu
         }
-
         public bool CreateCustomer(CustomerRequestDTO customer)
         {
             try

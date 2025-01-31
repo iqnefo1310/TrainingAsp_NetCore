@@ -21,7 +21,7 @@ namespace PERT_2.Controllers
         }
         // GET: api/<CustomerController>
         [HttpGet]
-        [Route("Melihat Semua Data")]
+        [Route("GetDataAll")]
         public IActionResult Get()
         {
             //return new string[] { "value1", "value2" };
@@ -52,7 +52,7 @@ namespace PERT_2.Controllers
         //Pertemuan 3////////////////////////////////////////////////////////////////////////////////////////////////
         // POST api/<CustomerController>
         [HttpPost]
-        [Route("Menambahkan Data Customer")]
+        [Route("AddData")]
         public IActionResult post(CustomerRequestDTO customer)
         {
             var insertCustomer = _customerServices.CreateCustomer(customer);
@@ -90,7 +90,7 @@ namespace PERT_2.Controllers
         } 
 
         [HttpPut]
-        [Route("Mengedit Data {Id}")]
+        [Route("EditedData{Id}")]
         public IActionResult put(int Id, CustomerRequestDTO customer)
         {
             try
@@ -110,7 +110,7 @@ namespace PERT_2.Controllers
             }
 
         }
-        [HttpGet("Mendapatkan Satu Data{id}")]
+        [HttpGet("GetById{id}")]
         public IActionResult Get(int id)
         {
             //return new string[] { "value1", "value2" };
@@ -120,7 +120,7 @@ namespace PERT_2.Controllers
         }
 
         // DELETE api/<CustomerController>/5
-        [HttpDelete("Hapus Data{id}")]
+        [HttpDelete("DeleteData{id}")]
         public IActionResult Delete(int id)
         {
             try
