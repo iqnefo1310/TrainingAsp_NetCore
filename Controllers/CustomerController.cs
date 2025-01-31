@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using PERT_2.Models;
 using PERT_2.Models.DB;
 using PERT_2.Models.DTO;
 using PERT_2.Services;
+using PERT_2.Validate;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using FluentValidation.Results;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,6 +19,7 @@ namespace PERT_2.Controllers
     {
         //dibuat
         private readonly CustomerServices _customerServices;
+        private FluentValidation.Results.ValidationResult _validation;
 
         public CustomerController(CustomerServices customerServices)
         {
@@ -21,6 +27,7 @@ namespace PERT_2.Controllers
         }
         // GET: api/<CustomerController>
         [HttpGet]
+        [Route("MelihatSemuaData")]
         [Route("GetDataAll")]
         public IActionResult Get()
         {
@@ -52,30 +59,47 @@ namespace PERT_2.Controllers
         //Pertemuan 3////////////////////////////////////////////////////////////////////////////////////////////////
         // POST api/<CustomerController>
         [HttpPost]
+        [Route("MenambahkanDataCustomer")]
+        public IActionResult post(CustomerRequestDTO Customer)
         [Route("AddData")]
         public IActionResult post(CustomerRequestDTO customer)
         {
-            var insertCustomer = _customerServices.CreateCustomer(customer);
             try
             {
+                ValidatorRequestCustomer request = new ValidatorRequestCustomer();
+                _validation = request.Validate(Customer);
 
-                if (insertCustomer)
+                if (_validation.IsValid)
                 {
-                    var responseSuccess = new GeneralResponse
+                    var insertCustomer = _customerServices.CreateCustomer(Customer);
+                    if (insertCustomer)
                     {
-                        StatusCode = "01",
-                        StatusDesc = "Sukses Menambah Data",
-                        Data = insertCustomer
+                        var responseSuccess = new GeneralResponse
+                        {
+                            StatusCode = "01",
+                            StatusDesc = "Sukses Menambah Data",
+                            Data = insertCustomer
+                        };
+                        return Ok(responseSuccess);
+                    }
+                    var responseFailed = new GeneralResponse
+                    {
+                        StatusCode = "02",
+                        StatusDesc = "Gagal Menambah Data",
+                        Data = null
                     };
-                    return Ok(responseSuccess);
+                    return BadRequest(responseFailed);
                 }
-                var responseFailed = new GeneralResponse
+                else
                 {
-                    StatusCode = "02",
-                    StatusDesc = "Gagal Menambah Data",
-                    Data = null
-                };
-                return BadRequest(responseFailed);
+                    var responseFailed = new GeneralResponse
+                    {
+                        StatusCode = "02",
+                        StatusDesc = _validation.ToString(),
+                        Data = null
+                    };
+                    return BadRequest(responseFailed);
+                }
             }
             catch (Exception ex)
             {
@@ -87,7 +111,7 @@ namespace PERT_2.Controllers
                 };
                 return BadRequest(responseFailed);
             }
-        } 
+        }
 
         [HttpPut]
         [Route("EditedData{Id}")]

@@ -29,6 +29,8 @@ namespace PERT_2.Services
                 throw;
             }
         }
+
+
         public bool UpdateCustomer(int Id, CustomerRequestDTO customer)
         {
             try
@@ -122,5 +124,6 @@ namespace PERT_2.Services
                 return false;
             }
         }
+       
     }
 }

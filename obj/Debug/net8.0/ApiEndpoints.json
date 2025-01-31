@@ -18,7 +18,7 @@
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
     "Method": "Get",
-    "RelativePath": "api/Customer/Melihat Semua Data",
+    "RelativePath": "api/Customer/MelihatSemuaData",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,13 +28,13 @@
   {
     "ContainingType": "PERT_2.Controllers.CustomerController",
     "Method": "post",
-    "RelativePath": "api/Customer/Menambahkan Data Customer",
+    "RelativePath": "api/Customer/MenambahkanDataCustomer",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "customer",
+        "Name": "Customer",
         "Type": "PERT_2.Models.DTO.CustomerRequestDTO",
         "IsRequired": true
       }
